@@ -18,7 +18,7 @@ abstract class AppDatabase: RoomDatabase() {
     companion object {
         private var instance: AppDatabase? = null
 
-        fun createDatabase(context: Context): AppDatabase {
+        fun createDatabase(context: Context): AppDatabase? {
             if (instance == null) {
                 instance = Room.databaseBuilder(
                     context,
@@ -26,7 +26,7 @@ abstract class AppDatabase: RoomDatabase() {
                     "app_database"
                 ).build()
             }
-            return instance as AppDatabase
+            return instance
         }
     }
 

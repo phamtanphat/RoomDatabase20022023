@@ -9,8 +9,10 @@ import androidx.room.PrimaryKey
  */
 @Entity(tableName = "work")
 data class WorkEntity (
-    @PrimaryKey val id: Int,
+    @PrimaryKey(autoGenerate = true)
+    var id: Int?,
     var description: String,
     var time: Long,
-    @ColumnInfo("id_priority") var idPriority: Int
+    @ColumnInfo("id_priority")
+    var idPriority: Int
 )
