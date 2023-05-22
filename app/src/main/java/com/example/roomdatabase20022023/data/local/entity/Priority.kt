@@ -16,4 +16,15 @@ data class Priority(
     @TypeConverters(PriorityEnum::class)
     @ColumnInfo(name = "name")
     val priorityEnum: PriorityEnum
-)
+) {
+
+    companion object {
+        fun getDataMock(): List<Priority> {
+            return mutableListOf<Priority>().apply {
+                add(Priority(null, PriorityEnum.LOW))
+                add(Priority(null, PriorityEnum.MEDIUM))
+                add(Priority(null, PriorityEnum.HIGH))
+            }
+        }
+    }
+}

@@ -20,7 +20,7 @@ interface AppDao {
     suspend fun addWorks(workEntity: WorkEntity)
 
     @Insert(entity = Priority::class)
-    suspend fun addPriority(priority: Priority): Long
+    suspend fun addPriority(priority: List<Priority>)
 
     @Query("SELECT * FROM priority")
     suspend fun getPriority(): List<Priority>
