@@ -16,4 +16,7 @@ class WorkRepository(var context: Context) {
         appDao?.addPriority(listPriority)
     }
 
+    suspend fun getPriority(): List<Priority>? {
+        return appDao?.getPriority()
+    }
 }
